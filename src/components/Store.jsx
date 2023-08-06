@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
-import ShopItem from "./ShopItem"
+import ShopItem from "./ShopItem";
+import Cart from "./Cart";
 
 function Store(){
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState({});
-
-    console.log(cart);
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products", {mode: "cors"})
@@ -23,6 +23,14 @@ function Store(){
         }
     }
 
+    function removeFromCart(item){
+        setCart(prevCart => {
+            const newCart = {...prevCart};
+            delete newCart[item];
+            return newCart;
+        });
+    }
+
     const storeCards = items.map(item => (
         <ShopItem
             key={uuid()}
@@ -32,17 +40,16 @@ function Store(){
         />
     ));
 
-    const cartList = [];
-
-    for(let cartItem in cart){
-        cartList.push(<div>{cartItem}: {cart[cartItem]}</div>)
-    }
-
-    console.log(items);
     return (
         <>
+            <button onClick={() => setShowCart(p => !p)}>
+                Show Cart
+            </button>
             <div>
-                {cartList}
+                {showCart && <Cart
+                    cart={cart}
+                    removeFromCart={removeFromCart}
+                />}
             </div>
             <div>
                 {storeCards}
