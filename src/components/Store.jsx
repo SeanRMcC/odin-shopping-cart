@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
+import ShopItem from "./ShopItem"
 
 function Store(){
     const [items, setItems] = useState([]);
@@ -11,13 +12,11 @@ function Store(){
     },[])
 
     const storeCards = items.map(item => (
-        <div key={uuid()}>
-            <img src={item.image} style={{
-                width: "100px",
-                height: "auto"
-            }}/>
-            <div>{item.title}</div>
-        </div>
+        <ShopItem
+            key={uuid()}
+            image={item.image}
+            title={item.title}
+        />
     ));
 
     console.log(items);
