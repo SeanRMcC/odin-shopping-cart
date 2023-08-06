@@ -21,6 +21,7 @@ function ShopItem(props){
                 height: "auto"
             }}/>
             <div>{props.title}</div>
+            <div>${props.price}</div>
             <div>
                 <button onClick={decrementCount}>-</button>
                 <span>{numBuy}</span>

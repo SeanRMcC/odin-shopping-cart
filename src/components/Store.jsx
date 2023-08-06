@@ -36,6 +36,7 @@ function Store(){
             key={uuid()}
             image={item.image}
             title={item.title}
+            price={item.price}
             addToCart={addToCart}
         />
     ));
