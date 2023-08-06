@@ -44,17 +44,19 @@ function Store(){
 
     return (
         <>
-            <button onClick={() => setShowCart(p => !p)}>
-                <img src={cartIcon} style={{
-                    width: "25px",
-                    height: "auto"
-                }}/>
-            </button>
-            <div>
-                {showCart && <Cart
-                    cart={cart}
-                    removeFromCart={removeFromCart}
-                />}
+            <div className="cart-with-button">
+                <button onClick={() => setShowCart(p => !p)}>
+                    <img src={cartIcon} style={{
+                        width: "25px",
+                        height: "auto"
+                    }}/>
+                </button>
+                <div>
+                    {showCart && <Cart
+                        cart={cart}
+                        removeFromCart={removeFromCart}
+                    />}
+                </div>
             </div>
             <div className="store-cards">
                 {storeCards}

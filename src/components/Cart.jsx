@@ -18,7 +18,7 @@ function Cart(props){
     
 
     return (
-        <div>
+        <div className="cart">
             {
                 cartItems.length === 0 ? <h4>Cart is empty, get shopping!</h4> : cartItems
             }

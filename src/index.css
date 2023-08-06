@@ -32,3 +32,20 @@ a:visited{
     gap: 50px;
     margin-top: 50px;
 }
+
+.cart-with-button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart{
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.cart > div > button{
+    margin-left: 10px;
+}
