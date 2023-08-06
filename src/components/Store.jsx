@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import ShopItem from "./ShopItem";
 import Cart from "./Cart";
+import cartIcon from "./../assets/cart.svg";
 
 function Store(){
     const [items, setItems] = useState([]);
@@ -44,7 +45,10 @@ function Store(){
     return (
         <>
             <button onClick={() => setShowCart(p => !p)}>
-                Show Cart
+                <img src={cartIcon} style={{
+                    width: "25px",
+                    height: "auto"
+                }}/>
             </button>
             <div>
                 {showCart && <Cart
