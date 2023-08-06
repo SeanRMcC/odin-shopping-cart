@@ -17,3 +17,18 @@ a{
 a:visited{
     color: black;
 }
+
+.shop-item{
+    display: flex;
+}
+
+.shop-item > div{
+    align-self: flex-end;
+}
+
+.store-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 50px;
+}

@@ -56,7 +56,7 @@ function Store(){
                     removeFromCart={removeFromCart}
                 />}
             </div>
-            <div>
+            <div className="store-cards">
                 {storeCards}
             </div>
         </>

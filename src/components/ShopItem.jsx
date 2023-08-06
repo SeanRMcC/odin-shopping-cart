@@ -15,18 +15,20 @@ function ShopItem(props){
     }
 
     return (
-        <div>
+        <div className="shop-item">
             <img src={props.image} style={{
-                width: "100px",
+                width: "75px",
                 height: "auto"
             }}/>
-            <div>{props.title}</div>
-            <div>${props.price}</div>
             <div>
-                <button onClick={decrementCount}>-</button>
-                <span>{numBuy}</span>
-                <button onClick={incrementCount}>+</button>
-                <button onClick={() => props.addToCart(props.title, numBuy)}>Add to cart</button>
+                <div>{props.title}</div>
+                <div>${props.price}</div>
+                <div>
+                    <button onClick={decrementCount}>-</button>
+                    <span>{numBuy}</span>
+                    <button onClick={incrementCount}>+</button>
+                    <button onClick={() => props.addToCart(props.title, numBuy)}>Add to cart</button>
+                </div>
             </div>
         </div>
     );
