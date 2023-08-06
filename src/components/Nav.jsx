@@ -5,8 +5,8 @@ function Nav(){
         <nav>
             <h1>Sean's Store</h1>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="store">Store</Link></li>
+                <button><li><Link to="/">Home</Link></li></button>
+                <button><li><Link to="store">Store</Link></li></button>
             </ul>
         </nav>
         
