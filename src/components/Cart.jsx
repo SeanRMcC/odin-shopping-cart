@@ -19,7 +19,9 @@ function Cart(props){
 
     return (
         <div>
-            {cartItems}
+            {
+                cartItems.length === 0 ? <h4>Cart is empty, get shopping!</h4> : cartItems
+            }
         </div>
     );
 }
